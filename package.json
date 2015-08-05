@@ -1,7 +1,7 @@
 {
-  "name": "xps-resolver",
+  "name": "ember-cli-pod-people",
   "version": "1.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "An alternate pod resolver",
   "directories": {
     "doc": "doc",
     "test": "tests"

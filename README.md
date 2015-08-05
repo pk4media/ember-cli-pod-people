@@ -1,4 +1,3 @@
-
 # ember-cli-pod-people
 Alternate ember-cli pod resolver using /application as a base for all route related paths
 
@@ -7,7 +6,7 @@ Alternate ember-cli pod resolver using /application as a base for all route rela
 # app/app.js
 
 import Ember from 'ember';
-import Resolver from 'xps-resolver/resolver';
+import Resolver from 'ember-cli-pod-people/resolver';
 import loadInitializers from 'ember/load-initializers';
 import config from './config/environment';
 

@@ -4,12 +4,9 @@ export default Resolver.extend({
   podBasedLookupWithPrefix: function(podPrefix, parsedName) {
     let fullNameWithoutType = parsedName.fullNameWithoutType;
 
-    if (parsedName.type === 'template') {
-      if (fullNameWithoutType.indexOf('components') === 0) {
-        fullNameWithoutType = fullNameWithoutType.replace(/^components\//, '');
-
-        return podPrefix + '/' + fullNameWithoutType + '/' + parsedName.type;
-      }
+    if (isComponentTemplate(parsedName)) {
+      fullNameWithoutType = fullNameWithoutType.replace(/^components\//, '');
+      return podPrefix + '/' + fullNameWithoutType + '/' + parsedName.type;
     }
 
     switch (parsedName.type) {
@@ -25,3 +22,8 @@ export default Resolver.extend({
     return podPrefix + '/' + fullNameWithoutType + '/' + parsedName.type;
   }
 });
+
+function isComponentTemplate(parsedName) {
+  return parsedName.type === 'template' &&
+    parsedName.fullNameWithoutType.indexOf('components') === 0;
+}

@@ -2,5 +2,5 @@
 'use strict';
 
 module.exports = {
-  name: 'xps-resolver'
+  name: 'ember-cli-pod-people'
 };
